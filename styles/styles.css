@@ -1,0 +1,17 @@
+#top_row, #mid_row, #btm_row {
+
+    display: flex;
+    justify-content: center;
+    gap: 2.3rem;
+}
+
+.form-control {
+    border-color: black;
+}
+
+#search_container {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+   
+}
