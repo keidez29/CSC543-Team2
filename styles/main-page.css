@@ -1,3 +1,12 @@
+body {
+    background-color: lightgray;
+}
+
+
+a {
+    text-decoration: none;
+}
+
 #top_row, #mid_row, #btm_row {
 
     display: flex;
@@ -5,9 +14,23 @@
     gap: 2.3rem;
 }
 
+video {
+height: 268px;
+
+width: 169px;
+
+    
+}
+
 .form-control {
     border-color: black;
     
+}
+
+#logo_img {
+    position: absolute;
+    height: auto;
+    width: 180px;
 }
 
 #upload-button-div {
@@ -17,23 +40,7 @@
 }
 
 
-#upload-screen-title {
-    display: flex;
-    
-}
-#upload-screen-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 5rem;
-}
 
-#upload-video-screen {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
 #search_container {
     display: flex;
     justify-content: center;
