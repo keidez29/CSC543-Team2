@@ -1,0 +1,42 @@
+#top_row, #mid_row, #btm_row {
+
+    display: flex;
+    justify-content: center;
+    gap: 2.3rem;
+}
+
+.form-control {
+    border-color: black;
+    
+}
+
+#upload-button-div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2px;
+}
+
+
+#upload-screen-title {
+    display: flex;
+    
+}
+#upload-screen-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5rem;
+}
+
+#upload-video-screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#search_container {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+   
+}
