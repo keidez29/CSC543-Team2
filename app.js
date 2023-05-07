@@ -27,7 +27,7 @@ videoApp.post('/', (req,res)=> {
                 res.send(err)
             }
             else {
-                res.sendFile(__dirname + "/Page.html")
+                res.sendFile(__dirname + "/public_html/Page.html")
                 
             }
         })
