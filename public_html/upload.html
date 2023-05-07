@@ -1,0 +1,83 @@
+<!--
+    Team 2 - Keila Hernandez, Austin Granchelli, Donte Brooks, Valon Ajeti
+    (Final Project)
+    This is our HTML document for our Video Streaming Site.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Upload Video</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sidenav col-xs-12 col-sm-1">
+                    <img src="images/burger-bar.png">
+                </div>
+                <div class="content col-xs-12 col-sm-11">
+                    <header>
+                        <div class="row">
+                            <div class="logo col-2">
+                                <img src="images/Logo.png">
+                            </div>
+                            <div class="col-2" >
+                                
+                            </div>
+                            <div class="col-8"> 
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </header>
+                    <section>
+                            <nav class="flex-div">
+                                <div class="nav-left flex-div">
+                                <img src="../Images/MenuIcon.png" class="menu-icon">
+                                <img src="../Images/Logo.png" class="logo">
+                            </div>
+                            </nav>
+                            <div class ="Search">
+                            <form method="POST" action="/" enctype="multipart/form-data">
+                              <label for="VTitle">Video Title</label>
+                              <input type="text" id="VTitle" name="VTitle"><br><br>
+                              <label for="DCript">Description</label>
+                              <input type="text" id="DCript" name="DCript"><br><br>
+                              <label for="Genre1">Genre</label>
+                              <select name="Genre1" id="Genre1">
+                                <option value="comedy">Comedy</option>
+                                <option value="vlog">Vlog</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="news">News</option>
+                              </select>
+
+                               <br><br>
+                              <input type="file" name="file"/>
+                              <input type="submit" value="Upload">
+                            </form>
+                            </div>
+                        <div class="DivButton1">
+                        <button class="button1"><b>Upload Video</b></button>
+                        </div>
+                        <div>
+                        <p>Choose video Thumbnail:</p>
+                        <img src="Images/CatImage.jpg">
+                        </div>
+                        <input type="file" accept="image/*" name="uploadfile" id="img" style="display:none;"/>
+                        <label class="button2" for="img">Browse</label>
+
+                        <!-- <button id="thumbnail-upload" class="button2">Browse</button> -->
+                        <script src="script.js"></script>
+                    </section>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
