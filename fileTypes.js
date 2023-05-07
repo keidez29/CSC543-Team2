@@ -3,9 +3,6 @@
 // 12 April 2023
 // Description: Server Module
 
-export {
-    fileReader
-}
 
 
 //Function returns a given content type based on the extension of the file being served.
@@ -18,11 +15,20 @@ let fileReader = function (myFilePath) {
 
     switch (fileExt) {
 
-        case "html":
-            return "text/html"
-        case "jpg":
-            return "image/jpg"
-        default:
-            return "plain/text"
+       case "jpg":
+       case "jpeg":
+       case "png":
+        return("./video_thumbnails")
+        break;
+       
+       case "mp4":
+       case "wvm":
+       case "mov":
+        return("./video_uploads")
+        break;
+      
+       default: 
+        return ("invalid file format")
+        
     }
 }

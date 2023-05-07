@@ -21,19 +21,28 @@ videoApp.post('/', (req,res)=> {
         let file = req.files.file
         let fileName = file.name
         console.log(fileName)
+        console.log(file)
 
         file.mv('./video_thumbnails/'+fileName, (err) => {
             if (err) {
-                res.send(err)
+                res.send("Error. File type is unsupported")
             }
             else {
                 res.sendFile(__dirname + "/public_html/Page.html")
+                console.log(videoApp.use(upload()))
+
                 
             }
         })
         
     }
 })
+
+
+
+
+
+
 
 videoApp.listen(80)
 

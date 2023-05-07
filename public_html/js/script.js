@@ -7,6 +7,26 @@ const videoSubmitButton = document.getElementById("videoSubmit")
 
 
 
+const GetVideos = () => {
+
+    const AJAX = new XMLHttpRequest();
+
+    AJAX.open("PUT", "0.0.0.0:80../video_uploads", true)
+
+    AJAX.onload = () => {
+        if (AJAX.status === 200)
+        {console.log("success")
+        let videos = JSON.parse(this.response)
+    
+    }
+
+    }
+
+
+    
+}
+
+
 
 // let homepageVideos = document.querySelector("video")
 
