@@ -1,26 +1,15 @@
 const express = require('express');
 const app = express();
-const path = require('path');
-const router = express.Router();
 
-app.use(express.static('public_html'))
+const http = require('http')
+const fs = require('fs')
 
-router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/public_html/homepage.html'));
-});
+app.use(express.static(__dirname + 'public_html'));
 
-app.use('/', router);
 
-router.get('/search',function(req,res){
-  res.sendFile(path.join(__dirname+'/public_html/search-page.html'));
-});
- 
-router.get('/upload',function(req,res){
-  res.sendFile(path.join(__dirname+'/public_html/upload.html'));
-});
-
-router.get('/login',function(req,res){
-  res.sendFile(path.join(__dirname+'/public_html/user-login.html'));
-});
-
-app.listen(80, () => console.log('Application is running'));
+//const server = http.createServer((req, res) => {
+//  res.writeHead(200, { 'content-type': 'text/html' })
+//  fs.createReadStream('homepage.html').pipe(res)
+//})
+//server.listen(80);
+let server = app.listen(80);
