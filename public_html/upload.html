@@ -10,74 +10,90 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Upload Video</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container-fluid">
+         <div class="collapse" id="navbarToggleExternalContent">
+          <div class="p-4" style="background-color: purple;">
+             <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px; color: white;">
+                    <li class="nav-item">
+                      <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="upload.html">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="user-login.html">Login</a>
+                    </li>
+                </ul>
+          </div>
+        </div>
+        <nav class="navbar " style="background-color: purple;">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"style="background-color: white;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+        <div class="container">
+            <header>
             <div class="row">
-                <div class="sidenav col-xs-12 col-sm-1">
-                    <img src="images/burger-bar.png">
+                <div class="logo col-2">
+                    <img src="images/Logo.png" width="100%">
                 </div>
-                <div class="content col-xs-12 col-sm-11">
-                    <header>
-                        <div class="row">
-                            <div class="logo col-2">
-                                <img src="images/Logo.png">
-                            </div>
-                            <div class="col-2" >
-                                
-                            </div>
-                            <div class="col-8"> 
-                                <form class="d-flex">
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success" type="submit">Search</button>
-                                </form>
-                            </div>
-                            
-                        </div>
-                    </header>
-                    <section>
-                            <nav class="flex-div">
-                                <div class="nav-left flex-div">
-                                <img src="../Images/MenuIcon.png" class="menu-icon">
-                                <img src="../Images/Logo.png" class="logo">
-                            </div>
-                            </nav>
-                            <div class ="Search">
-                            <form method="POST" action="/" enctype="multipart/form-data">
-                              <label for="VTitle">Video Title</label>
-                              <input type="text" id="VTitle" name="VTitle"><br><br>
-                              <label for="DCript">Description</label>
-                              <input type="text" id="DCript" name="DCript"><br><br>
-                              <label for="Genre1">Genre</label>
-                              <select name="Genre1" id="Genre1">
-                                <option value="comedy">Comedy</option>
-                                <option value="vlog">Vlog</option>
-                                <option value="gaming">Gaming</option>
-                                <option value="news">News</option>
-                              </select>
-
-                               <br><br>
-                              <input type="file" name="file"/>
-                              <input type="submit" value="Upload">
-                            </form>
-                            </div>
-                        <div class="DivButton1">
-                        <button class="button1"><b>Upload Video</b></button>
-                        </div>
-                        <div>
-                        <p>Choose video Thumbnail:</p>
-                        <img src="Images/CatImage.jpg">
-                        </div>
-                        <input type="file" accept="image/*" name="uploadfile" id="img" style="display:none;"/>
-                        <label class="button2" for="img">Browse</label>
-
-                        <!-- <button id="thumbnail-upload" class="button2">Browse</button> -->
-                        <script src="script.js"></script>
-                    </section>
+                <div class="col-2">
+                    
                 </div>
+                <div class="col-8" id="searchbar"> 
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+                
             </div>
-        </div>        
+            </header>
+            <section>
+                    <nav class="flex-div">
+                        <div class="nav-left flex-div">
+                        <img src="../Images/MenuIcon.png" class="menu-icon">
+                        <img src="../Images/Logo.png" class="logo">
+                    </div>
+                    </nav>
+                    <div class ="Search">
+                    <form method="POST" action="/" enctype="multipart/form-data">
+                      <label for="VTitle">Video Title</label>
+                      <input type="text" id="VTitle" name="VTitle"><br><br>
+                      <label for="DCript">Description</label>
+                      <input type="text" id="DCript" name="DCript"><br><br>
+                      <label for="Genre1">Genre</label>
+                      <select name="Genre1" id="Genre1">
+                        <option value="comedy">Comedy</option>
+                        <option value="vlog">Vlog</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="news">News</option>
+                      </select>
+
+                       <br><br>
+                      <input type="file" name="file"/>
+                      <input type="submit" value="Upload">
+                    </form>
+                    </div>
+                <div class="DivButton1">
+                <button class="button1"><b>Upload Video</b></button>
+                </div>
+                <div>
+                <p>Choose video Thumbnail:</p>
+                <img src="Images/CatImage.jpg">
+                </div>
+                <input type="file" accept="image/*" name="uploadfile" id="img" style="display:none;"/>
+                <label class="button2" for="img">Browse</label>
+
+                <!-- <button id="thumbnail-upload" class="button2">Browse</button> -->
+                <script src="script.js"></script>
+            </section>
+        </div>      
     </body>
 </html>
