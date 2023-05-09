@@ -37,7 +37,7 @@
             </button>
           </div>
         </nav>
-        <div class="container">
+        <div class="container-md p-4">
             <header>
             <div class="row">
                 <div class="logo col-2">
@@ -55,15 +55,10 @@
                 
             </div>
             </header>
-            <section>
-                    <nav class="flex-div">
-                        <div class="nav-left flex-div">
-                        <img src="../Images/MenuIcon.png" class="menu-icon">
-                        <img src="../Images/Logo.png" class="logo">
-                    </div>
-                    </nav>
+            <section class="d-flex justify-content-center p-3">                    
                     <div class ="Search">
-                    <form method="POST" action="/" enctype="multipart/form-data">
+                        <h3 class="p-3">Upload Your Video</h3>
+                    <form class="p-3" method="POST" action="/" enctype="multipart/form-data">
                       <label for="VTitle">Video Title</label>
                       <input type="text" id="VTitle" name="VTitle"><br><br>
                       <label for="DCript">Description</label>
@@ -78,22 +73,29 @@
 
                        <br><br>
                       <input type="file" name="file"/>
-                      <input type="submit" value="Upload">
+                     <!--  <p><b>Choose video Thumbnail:  </b><br />
+               <img src="Images/CatImage.jpg"> 
+                
+                <input type="file" accept="image/*" name="uploadfile" id="img" /></p> -->
+                      <br><br>
+                      <input type="submit" value="Upload" class="btn btn-primary">
                     </form>
-                    </div>
-                <div class="DivButton1">
-                <button class="button1"><b>Upload Video</b></button>
                 </div>
-                <div>
-                <p>Choose video Thumbnail:</p>
-                <img src="Images/CatImage.jpg">
-                </div>
-                <input type="file" accept="image/*" name="uploadfile" id="img" style="display:none;"/>
-                <label class="button2" for="img">Browse</label>
+                <!-- <div class="DivButton1"> -->
+                <!-- <button class="button1"><b>Upload Video</b></button> -->
+                <!-- </div> -->
+
 
                 <!-- <button id="thumbnail-upload" class="button2">Browse</button> -->
                 <script src="script.js"></script>
             </section>
+            <!-- <div class="d-flex justify-content-center" style="padding-top: 30px;">
+
+                <p><b>Choose video Thumbnail:  </b><br /> -->
+                <!-- <img src="Images/CatImage.jpg"> -->
+                
+                <!-- <input type="file" accept="image/*" name="uploadfile" id="img" /></p>
+                </div> -->
         </div>      
     </body>
 </html>
