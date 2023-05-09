@@ -117,7 +117,7 @@
     "xtend": "^4.0.2"
   },
   "devDependencies": {},
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

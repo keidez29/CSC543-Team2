@@ -18,13 +18,13 @@ let fileReader = function (myFilePath) {
        case "jpg":
        case "jpeg":
        case "png":
-        return("./video_thumbnails")
+        return("./video_thumbnails/")
         break;
        
        case "mp4":
        case "wvm":
        case "mov":
-        return("./video_uploads")
+        return("./video_uploads/")
         break;
       
        default: 
@@ -32,3 +32,5 @@ let fileReader = function (myFilePath) {
         
     }
 }
+
+export {fileReader}

@@ -1,50 +1,63 @@
+
+
 // Keila Hernandez & Austin Granchelli
 // CSC 543 - HW6
 // 12 April 2023
 // Description: Main Application
 
+import express from 'express'
+import upload from 'express-fileupload'
+import { fileURLToPath } from 'url'
+import path from 'path'
+import { fileReader } from './fileTypes.js'
 
-const express = require("express");
-const upload = require('express-fileupload')
+
+
 const videoApp = express()
 
+const fileName = fileURLToPath(import.meta.url)
 
-videoApp.use(upload())
+const __dirname = path.dirname(fileName)
+
+videoApp.use(upload(),express.static(__dirname + '/public_html'))
+videoApp.use(express.static(path.join(__dirname + "/")))
+
+console.log("Listening on port 80.")
+
+
 
 videoApp.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/public_html/Page.html')
+    res.sendFile(__dirname + '/public_html/project_543.html')
 })
 
 videoApp.post('/', (req,res)=> {
     if (req.files) {
-        console.log(req.files)
+       
         let file = req.files.file
         let fileName = file.name
-        console.log(fileName)
-        console.log(file)
+        
 
-        file.mv('./video_thumbnails/'+fileName, (err) => {
+        file.mv(fileReader(file.name) + fileName, (err) => {
             if (err) {
-                res.send("Error. File type is unsupported")
+                res.send(err)
             }
             else {
                 res.sendFile(__dirname + "/public_html/Page.html")
                 console.log(videoApp.use(upload()))
-
+                console.log(`"${file.name}" uploaded successfully.`)
                 
             }
+            
         })
         
-    }
-})
-
-
-
-
-
+    }})
 
 
 videoApp.listen(80)
+
+
+
+
 
 // import { createServer } from 'http';
 // import { readFile } from 'fs';
