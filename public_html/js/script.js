@@ -1,12 +1,15 @@
 // const uploadButton = document.getElementById("upload-button")
 // let uploadScreen = document.getElementById("upload-video-screen")
 
+import { videoFileDirectory,thumbnailFileDirectory } from "../../app"
 
 const thumbnailForm = document.getElementById("thumbnail_form")
 const videoForm = document.getElementById("video-upload")
 const thumbnailUploadButton = document.getElementById("thumbnail-upload")
 const videoSubmitButton = document.getElementById("videoSubmit")
 
+
+alert(videoFileDirectory)
 
 
 

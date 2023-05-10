@@ -80,3 +80,13 @@
     margin: 4px 2px;
     cursor: pointer;
   }
+
+  #vidContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #videoScreen {
+    height: 400px;
+    width: 400px;
+  }

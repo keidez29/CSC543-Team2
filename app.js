@@ -10,6 +10,7 @@ import upload from 'express-fileupload'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import { fileReader } from './fileTypes.js'
+import * as fs from 'fs'
 
 
 
@@ -34,18 +35,19 @@ videoApp.post('/', (req,res)=> {
     if (req.files) {
        
         let file = req.files.file
+
         let fileName = file.name
-        
+
 
         file.mv(fileReader(file.name) + fileName, (err) => {
             if (err) {
                 res.send(err)
             }
-            else {
+
+            else { 
                 res.sendFile(__dirname + "/public_html/Page.html")
                 console.log(videoApp.use(upload()))
                 console.log(`"${file.name}" uploaded successfully.`)
-                
             }
             
         })
@@ -55,8 +57,19 @@ videoApp.post('/', (req,res)=> {
 
 videoApp.listen(80)
 
+const videoFileDirectory = "video_uploads"
+fs.readdir(videoFileDirectory, (err,files) => {
+   return(files)
+})
+
+const thumbnailFileDirectory = "video_thumbnails"
+fs.readdir(videoFileDirectory, (err,files) => {
+   return(files)
+})
 
 
+
+export {videoFileDirectory,thumbnailFileDirectory}
 
 
 // import { createServer } from 'http';
