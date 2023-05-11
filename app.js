@@ -11,11 +11,13 @@ const url = require('url')
 const path = require('path')
 const http = require('http')
 const fs = require('fs')
+const videoTitle = require('./public_html/js/script.js')
 // import { fileURLToPath } from 'url'
 // import path from 'path'
 // import * as fs from 'fs'
 
 const videoApp = express()
+global.document = { execCommand() {}}
 
 // const fileName = fileURLToPath(import.meta.url)
 
@@ -25,6 +27,8 @@ const videoApp = express()
 
 videoApp.use(express.static(__dirname))
 
+videoApp.use(upload())
+
     console.log("Listening on port 80.")
 
 // const server = http.createServer((req, res) => {
@@ -33,21 +37,21 @@ videoApp.use(express.static(__dirname))
 // })
 // server.listen(80);
 videoApp.get( "/",(req,res) =>{
-    
+  
     res.sendFile(__dirname + '/public_html/homepage.html') })
    
 
 
 videoApp.post('/', (req,res)=> {
     if (req.files) {
-       
+        
         let file = req.files.file
 
         let fileName = file.name
         
         console.log(fileName)
 
-        file.mv(`./video_uploads/${fileName}`, (err) => {
+        file.mv('./video_uploads/' + fileName, (err) => {
             if (err) {
                 res.send(err)
             }
@@ -55,7 +59,6 @@ videoApp.post('/', (req,res)=> {
             else { 
                 // res.sendFile(__dirname + "./public_html/videos")
                 res.send("File uploaded")
-                console.log(videoApp.use(upload()))
                 console.log(`"${file.name}" uploaded successfully.`)
             }
             
