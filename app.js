@@ -23,48 +23,48 @@ const videoApp = express()
 
 // videoApp.use(upload())
 
-videoApp.use(express.static(__dirname + './'))
+videoApp.use(express.static(__dirname))
 
     console.log("Listening on port 80.")
 
-const server = http.createServer((req, res) => {
- res.writeHead(200, { 'content-type': 'text/html' })
- fs.createReadStream('homepage.html').pipe(res)
-})
-server.listen(80);
-// videoApp.get( "/",(req,res) =>{
-    
-//     res.sendFile('/public_html/homepage.html', {root:__dirname})
-   
+// const server = http.createServer((req, res) => {
+//  res.writeHead(200, { 'content-type': 'text/html' })
+//  fs.createReadStream('homepage.html').pipe(res)
 // })
+// server.listen(80);
+videoApp.get( "/",(req,res) =>{
+    
+    res.sendFile(__dirname + '/public_html/homepage.html') })
+   
 
-// videoApp.post('/', (req,res)=> {
-//     if (req.files) {
+
+videoApp.post('/', (req,res)=> {
+    if (req.files) {
        
-//         let file = req.files.file
+        let file = req.files.file
 
-//         let fileName = file.name
+        let fileName = file.name
         
-//         console.log(fileName)
+        console.log(fileName)
 
-//         file.mv(`./video_uploads/${fileName}`, (err) => {
-//             if (err) {
-//                 res.send(err)
-//             }
+        file.mv(`./video_uploads/${fileName}`, (err) => {
+            if (err) {
+                res.send(err)
+            }
 
-//             else { 
-//                 // res.sendFile(__dirname + "./public_html/videos")
-//                 res.send("File uploaded")
-//                 console.log(videoApp.use(upload()))
-//                 console.log(`"${file.name}" uploaded successfully.`)
-//             }
+            else { 
+                // res.sendFile(__dirname + "./public_html/videos")
+                res.send("File uploaded")
+                console.log(videoApp.use(upload()))
+                console.log(`"${file.name}" uploaded successfully.`)
+            }
             
-//         })
+        })
         
-//     }})
+    }})
 
 
-// videoApp.listen(80)
+videoApp.listen(80)
 
 
 

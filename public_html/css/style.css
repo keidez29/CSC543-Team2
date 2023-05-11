@@ -1,0 +1,53 @@
+#top_row, #mid_row, #btm_row 
+{
+	display: flex;
+	justify-content: center;
+	gap: 2.3rem;
+}
+
+.form-control {
+	border-color: black;
+}
+
+#search_container {
+	display: flex;
+	justify-content: center;
+	gap: 0.8rem;
+}
+
+.navbar {
+	background-color: purple;
+	color: #fff;
+}
+
+a { 
+	text-decoration: none;
+	color: #080808; 
+}
+
+.vid {
+	background-color: white;
+
+}
+
+body {
+	background-color: #f7f7f7;
+
+}
+
+header {
+	align-content: center;
+	padding-bottom: 20px;
+}
+#searchbar {
+	padding-top: 25px;
+}
+
+.btn {
+	background-color: purple;
+}
+
+.card {
+	padding: 20px;
+}
+        
