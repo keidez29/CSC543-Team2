@@ -1,5 +1,10 @@
 {
-  "name": "final_project",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "csc543-team2",
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
@@ -121,7 +126,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keidez29/CSC543-Team2.git"
+  },
+  "author": "ajeti v",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keidez29/CSC543-Team2/issues"
+  },
+  "homepage": "https://github.com/keidez29/CSC543-Team2#readme",
   "description": ""
 }
