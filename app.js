@@ -5,57 +5,66 @@
 // 12 April 2023
 // Description: Main Application
 
-import express from 'express'
-import upload from 'express-fileupload'
-import { fileURLToPath } from 'url'
-import path from 'path'
-import * as fs from 'fs'
-
+const express = require('express')
+const upload = require('express-fileupload')
+const url = require('url')
+const path = require('path')
+const http = require('http')
+const fs = require('fs')
+// import { fileURLToPath } from 'url'
+// import path from 'path'
+// import * as fs from 'fs'
 
 const videoApp = express()
 
-const fileName = fileURLToPath(import.meta.url)
+// const fileName = fileURLToPath(import.meta.url)
 
-const __dirname = path.dirname(fileName) 
+// const __dirname = path.dirname(fileName) 
 
-videoApp.use(upload())
-videoApp.use(express.static(__dirname + 'public_html'))
+// videoApp.use(upload())
+
+videoApp.use(express.static(__dirname + '/public_html'))
 
     console.log("Listening on port 80.")
 
-
-videoApp.get( "/",(req,res) =>{
-    
-    res.sendFile(__dirname + '/public_html/upload.html')
+const server = http.createServer((req, res) => {
+ res.writeHead(200, { 'content-type': 'text/html' })
+ fs.createReadStream('./public_html/homepage.html').pipe(res)
 })
+server.listen(80);
+// videoApp.get( "/",(req,res) =>{
+    
+//     res.sendFile('/public_html/homepage.html', {root:__dirname})
+   
+// })
 
-videoApp.post('/', (req,res)=> {
-    if (req.files) {
+// videoApp.post('/', (req,res)=> {
+//     if (req.files) {
        
-        let file = req.files.file
+//         let file = req.files.file
 
-        let fileName = file.name
+//         let fileName = file.name
         
-        console.log(fileName)
+//         console.log(fileName)
 
-        file.mv(`./video_uploads/${fileName}`, (err) => {
-            if (err) {
-                res.send(err)
-            }
+//         file.mv(`./video_uploads/${fileName}`, (err) => {
+//             if (err) {
+//                 res.send(err)
+//             }
 
-            else { 
-                // res.sendFile(__dirname + "./public_html/videos")
-                res.send("File uploaded")
-                console.log(videoApp.use(upload()))
-                console.log(`"${file.name}" uploaded successfully.`)
-            }
+//             else { 
+//                 // res.sendFile(__dirname + "./public_html/videos")
+//                 res.send("File uploaded")
+//                 console.log(videoApp.use(upload()))
+//                 console.log(`"${file.name}" uploaded successfully.`)
+//             }
             
-        })
+//         })
         
-    }})
+//     }})
 
 
-videoApp.listen(80)
+// videoApp.listen(80)
 
 
 
