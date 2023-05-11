@@ -39,7 +39,7 @@ header {
 	align-content: center;
 	padding-bottom: 20px;
 }
-#search {
+#searchbar {
 	padding-top: 25px;
 }
 
@@ -47,9 +47,6 @@ header {
 	background-color: purple;
 }
 
-.card {
-	padding: 20px;
-}
 .card {
 	padding: 20px;
 }
