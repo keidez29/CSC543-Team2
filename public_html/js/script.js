@@ -9,7 +9,7 @@ const thumbnailUploadButton = document.getElementById("thumbnail-upload")
 const videoSubmitButton = document.getElementById("videoSubmit")
 
 
-alert(videoFileDirectory)
+
 
 
 

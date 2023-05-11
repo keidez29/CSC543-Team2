@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 // Keila Hernandez & Austin Granchelli
@@ -10,26 +9,44 @@ import express from 'express'
 import upload from 'express-fileupload'
 import { fileURLToPath } from 'url'
 import path from 'path'
-import { fileReader } from './fileTypes.js'
 import * as fs from 'fs'
-
 
 
 const videoApp = express()
 
 const fileName = fileURLToPath(import.meta.url)
 
-const __dirname = path.dirname(fileName)
+const __dirname = path.dirname(fileName) 
 
-videoApp.use(upload(),express.static(__dirname + '/public_html'))
-videoApp.use(express.static(path.join(__dirname + "/")))
+videoApp.use(upload())
 
-console.log("Listening on port 80.")
+// const router = express.Router()
+
+// router.get('/',(req,res)=> {
+//     res.sendFile(__dirname + '/public_html/')
+// })
+
+// videoApp.use(express.static(path.join(__dirname + "/")))
+// videoApp.use(express.static(__dirname + "public_html"))
+// videoApp.use(express.static(__dirname + "public_html/search-page.html"))
+// videoApp.use(express.static(__dirname + "public_html/upload.html"))
+
+// videoApp.use(
+//     "/css",
+//     express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
+//   )
+//   videoApp.use(
+//     "/js",
+//     express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
+//   )
+//   videoApp.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")))
+  
+    console.log("Listening on port 80.")
 
 
-
-videoApp.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/public_html/project_543.html')
+videoApp.get( "/",(req,res) =>{
+    
+    res.sendFile(__dirname + '/public_html/upload.html')
 })
 
 videoApp.post('/', (req,res)=> {
@@ -38,15 +55,17 @@ videoApp.post('/', (req,res)=> {
         let file = req.files.file
 
         let fileName = file.name
+        
+        console.log(fileName)
 
-
-        file.mv(fileReader(file.name) + fileName, (err) => {
+        file.mv(`./video_uploads/${fileName}`, (err) => {
             if (err) {
                 res.send(err)
             }
 
             else { 
-                res.sendFile(__dirname + "/public_html/Page.html")
+                // res.sendFile(__dirname + "./public_html/videos")
+                res.send("File uploaded")
                 console.log(videoApp.use(upload()))
                 console.log(`"${file.name}" uploaded successfully.`)
             }
@@ -58,19 +77,17 @@ videoApp.post('/', (req,res)=> {
 
 videoApp.listen(80)
 
-const videoFileDirectory = "video_uploads"
-fs.readdir(videoFileDirectory, (err,files) => {
-   return(files)
-})
+// const videoFileDirectory = "video_uploads"
+// fs.readdir(videoFileDirectory, (err,files) => {
+//    return(files)
+// })
 
-const thumbnailFileDirectory = "video_thumbnails"
-fs.readdir(videoFileDirectory, (err,files) => {
-   return(files)
-})
+// const thumbnailFileDirectory = "video_thumbnails"
+// fs.readdir(videoFileDirectory, (err,files) => {
+//    return(files)
+// })
 
 
-
-export {videoFileDirectory,thumbnailFileDirectory}
 
 
 // import { createServer } from 'http';
@@ -235,25 +252,15 @@ export {videoFileDirectory,thumbnailFileDirectory}
 
 // let PORT = process.env.PORT || 8080;
 
-// let app = express();
+// let videoApp = express();
 
-// app.get("/", (req,res) => {
+// videoApp.get("/", (req,res) => {
 //     res.sendFile(path.join(__dirname, "project_543.html"))
 // })
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+// videoApp.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
 
 
 
 
 
-=======
-const http = require('http')
-const fs = require('fs')
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'content-type': 'text/html' })
-  fs.createReadStream('homepage.html').pipe(res)
-})
-server.listen(80);
->>>>>>> origin/valon

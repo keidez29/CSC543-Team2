@@ -11,6 +11,7 @@
     "balanced-match": "^1.0.2",
     "binary-extensions": "^2.2.0",
     "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.3",
     "brace-expansion": "^1.1.11",
     "braces": "^3.0.2",
     "buffer-from": "^1.1.2",
@@ -116,7 +117,6 @@
     "wordwrap": "^1.0.0",
     "xtend": "^4.0.2"
   },
-  "devDependencies": {},
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
