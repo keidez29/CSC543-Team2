@@ -11,13 +11,17 @@ const url = require('url')
 const path = require('path')
 const http = require('http')
 const fs = require('fs')
-const videoTitle = require('./public_html/js/script.js')
+
+
+
+
+
 // import { fileURLToPath } from 'url'
 // import path from 'path'
 // import * as fs from 'fs'
 
 const videoApp = express()
-global.document = { execCommand() {}}
+
 
 // const fileName = fileURLToPath(import.meta.url)
 

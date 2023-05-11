@@ -9,6 +9,13 @@
 // const videoSubmitButton = document.getElementById("videoSubmit")
 
 
+const search = document.getElementById("search-box").value 
+
+alert(search)
+
+
+
+
 
 
 // const AJAX = new XMLHttpRequest;
