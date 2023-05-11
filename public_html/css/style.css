@@ -39,7 +39,11 @@ header {
 	align-content: center;
 	padding-bottom: 20px;
 }
+<<<<<<< HEAD
 #searchbar {
+=======
+#search {
+>>>>>>> 052ac2e5dff79deab020c136f418495e2e0507fc
 	padding-top: 25px;
 }
 
@@ -50,4 +54,8 @@ header {
 .card {
 	padding: 20px;
 }
+<<<<<<< HEAD
         
+=======
+        
+>>>>>>> 052ac2e5dff79deab020c136f418495e2e0507fc

@@ -12,6 +12,10 @@
         <title>Upload Video</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
+=======
+        <script type="text/javascript" src="js/script.js"></script>
+>>>>>>> 052ac2e5dff79deab020c136f418495e2e0507fc
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -58,10 +62,17 @@
             <section class="d-flex justify-content-center p-3">                    
                     <div class ="Search">
                         <h3 class="p-3">Upload Your Video</h3>
+<<<<<<< HEAD
                     <form class="p-3" method="GET" action="/" enctype="multipart/form-data">
                       <label for="VTitle">Video Title</label>
                       <input type="text" id="VTitle" name="VTitle"><br><br>
                       <label for="DCript">Description</label>
+=======
+                    <form class="p-3" method="POST" action="/" enctype="multipart/form-data">
+                      <label for="VTitle">Video Title</label>
+                      <input type="text" id="VTitle" name="VTitle"><br><br>
+                      <label for="Dscript">Description</label>
+>>>>>>> 052ac2e5dff79deab020c136f418495e2e0507fc
                       <input type="text" id="DCript" name="DCript"><br><br>
                       <label for="Genre1">Genre</label>
                       <select name="Genre1" id="Genre1">
@@ -72,6 +83,7 @@
                       </select>
 
                        <br><br>
+<<<<<<< HEAD
                       <input type="file" accept="video/*" name="file"/>
                     
                       <br><br>
@@ -80,6 +92,18 @@
                 </div>
                 <script src="script.js"></script>
             </section>
+=======
+                      <input id="filename" type="file" name="file"/>
+                    
+                      <br><br>
+                      <input id="vidupload" type="submit" value="Upload" class="btn btn-primary">
+                    </form>
+                </div>
+             
+                <script src="script.js"></script>
+            </section>
+         
+>>>>>>> 052ac2e5dff79deab020c136f418495e2e0507fc
         </div>      
     </body>
 </html>
