@@ -18,7 +18,8 @@ const fileName = fileURLToPath(import.meta.url)
 
 const __dirname = path.dirname(fileName) 
 
-videoApp.use(upload(), __dirname + 'public_html')
+videoApp.use(upload())
+videoApp.use(express.static(__dirname + 'public_html'))
 
     console.log("Listening on port 80.")
 
