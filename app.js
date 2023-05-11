@@ -23,13 +23,13 @@ const videoApp = express()
 
 // videoApp.use(upload())
 
-videoApp.use(express.static(__dirname + '/public_html'))
+videoApp.use(express.static(__dirname + '/'))
 
     console.log("Listening on port 80.")
 
 const server = http.createServer((req, res) => {
  res.writeHead(200, { 'content-type': 'text/html' })
- fs.createReadStream('./public_html/homepage.html').pipe(res)
+ fs.createReadStream('homepage.html').pipe(res)
 })
 server.listen(80);
 // videoApp.get( "/",(req,res) =>{
