@@ -23,7 +23,7 @@ const videoApp = express()
 
 // videoApp.use(upload())
 
-videoApp.use(express.static(__dirname + '/'))
+videoApp.use(express.static(__dirname + './'))
 
     console.log("Listening on port 80.")
 
