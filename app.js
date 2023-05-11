@@ -41,3 +41,72 @@ AJAX.send(queryObjectToString(qObj));
 
 */
 app.listen(80, () => console.log('Application is running'));
+
+
+// Keila Hernandez & Austin Granchelli
+// CSC 543 - HW6
+// 12 April 2023
+// Description: Main Application
+const express = require('express')
+const upload = require('express-fileupload')
+const url = require('url')
+const path = require('path')
+const http = require('http')
+const fs = require('fs')
+
+
+const videoApp = express()
+// const fileName = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(fileName) 
+
+videoApp.use(upload())
+
+videoApp.use(express.static(__dirname + './'))
+videoApp.use(express.static(__dirname))
+
+    console.log("Listening on port 80.")
+
+const server = http.createServer((req, res) => {
+ res.writeHead(200, { 'content-type': 'text/html' })
+ fs.createReadStream('homepage.html').pipe(res)
+})
+server.listen(80);
+// videoApp.get( "/",(req,res) =>{
+// const server = http.createServer((req, res) => {
+//  res.writeHead(200, { 'content-type': 'text/html' })
+//  fs.createReadStream('homepage.html').pipe(res)
+// })
+// server.listen(80);
+videoApp.get( "/",(req,res) =>{
+
+
+    res.sendFile(__dirname + '/public_html/homepage.html') })
+
+
+videoApp.post('/', (req,res)=> {
+    if (req.files) {
+
+
+        let file = req.files.file
+        let fileName = file.name
+
+
+
+        file.mv(`./video_uploads/${fileName}`, (err) => {
+            if (err) {
+                res.send(err)
+            }
+
+            else { 
+                // res.sendFile(__dirname + "./public_html/videos")
+                res.send("File uploaded")
+                console.log(videoApp.use(upload()))
+                console.log(`"${file.name}" uploaded successfully.`)
+            } })
+        console.log(fileName)
+
+
+          }})
+        
+
+videoApp.listen(80)
