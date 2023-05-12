@@ -52,13 +52,10 @@ AJAX.send(queryObjectToString(qObj));
 
 
 
-
-// const fileName = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(fileName) 
-
 app.use(upload())
 
 app.use(express.static(__dirname))
+app.use(express.static("/public_html/css"))
 
     console.log("Listening on port 80.")
 
