@@ -9,10 +9,12 @@
 	border-color: black;
 }
 
+
+
 #search_container {
 	display: flex;
 	justify-content: center;
-	gap: 0.8rem;
+	
 }
 
 .navbar {
